@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+  express-app:
+    image: raja110199/gateway:latest  
+    command: node get_configuration.js
+    ports:
+      - "8087:8087"
+    depends_on:
+      - prometheus
+      - grafana
+      - nginx
+      - consul
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus-config.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+
+  nginx:
+    image: raja110199/nginx_loadbalancer:tag
+    ports:
+      - "9000:9000"
+  
+  consul:
+    image: consul:1.15.4
+    ports:
+      - "8500:8500"
+
+  user-service:
+    image: raja110199/user-service:latest 
+    command: npm start
+    ports:
+      - "8080:8080"
+  
+  product-service:
+    image: raja110199/product-service:latest 
+    command: npm start
+    ports:
+      - "8081:8081"
+
+  order-service:
+    image: raja110199/order-service:latest 
+    command: npm start
+    ports:
+      - "8082:8082"
+  
+  payment-service:
+    image: raja110199/payment-service:latest 
+    command: npm start
+    ports:
+      - "8083:8083"
+  
+  intercom-service:
+    image: raja110199/intercom-service:latest 
+    command: npm start
+    ports:
+      - "8084:8084"
+  
+  central-service:
+    image: raja110199/central-service:latest 
+    command: npm start
+    ports:
+      - "5000:5000"
