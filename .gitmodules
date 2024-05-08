@@ -1,0 +1,29 @@
+[submodule "api-gateway"]
+    path = api-gateway
+    url = https://github.com/UP11SRE/api-gateway.git
+
+[submodule "centralized-management"]
+    path = centralized-management
+    url = https://github.com/UP11SRE/centralized-management.git
+
+[submodule "intercom-service"]
+    path = microservices/microservice3
+    url = https://github.com/UP11SRE/intercom-service.git
+
+[submodule "order-service"]
+    path = microservices/microservice4
+    url = https://github.com/UP11SRE/order-service.git
+
+[submodule "payment-service"]
+    path = microservices/microservice5
+    url = https://github.com/UP11SRE/payment-service.git
+
+[submodule "user-service"]
+    path = microservices/microservice5
+    url = https://github.com/UP11SRE/user-service.git
+
+[submodule "product-service"]
+    path = microservices/microservice5
+    url =  https://github.com/UP11SRE/product-service.git
+
+   

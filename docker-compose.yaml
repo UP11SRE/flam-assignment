@@ -28,6 +28,7 @@ services:
     image: raja110199/nginx_loadbalancer:tag
     ports:
       - "9000:9000"
+    
   
   consul:
     image: consul:1.15.4
